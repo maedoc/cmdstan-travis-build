@@ -1,0 +1,9 @@
+language: c++
+
+install:
+  - curl -OL https://github.com/stan-dev/cmdstan/releases/download/v2.17.1/cmdstan-2.17.1.tar.gz
+  - tar xzf cmdstan-2.17.1.tar.gz
+  - cd cmdstan* && make CC=g++ build
+
+script:
+  - cd cmdstan* && make CC=g++ test
